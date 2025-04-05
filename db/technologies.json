@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "tech_name":"phone"
+    },
+    {
+        "id":2,
+        "tech_name":"fridge"
+    },
+    {
+        "id":3,
+        "tech_name":"gas plate"
+    },
+    {
+        "id":4,
+        "tech_name":"television"
+    },
+    {
+        "id":5,
+        "tech_name":"microwave"
+    }
+]

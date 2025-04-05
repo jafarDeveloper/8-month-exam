@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "username": "hho",
+        "phone": "998902555555",
+        "email": "shoxruxmurodov10@gmail.com",
+        "password": "shoxrux",
+        "act_count": 1,
+        "createdAt": "2025-04-02T15:10:01.586Z"
+    },
+    {
+        "id": 2,
+        "username": "hho",
+        "email": "shoxruxmurodov19@gmail.com",
+        "password": "shoxrux",
+        "phone": "998902555555",
+        "createdAt": "2025-04-05T11:01:04.487Z"
+    },
+    {
+        "id": 3,
+        "createdAt": "2025-04-05T12:06:56.557Z"
+    },
+    {
+        "id": 4,
+        "username": "jagasfr",
+        "phone": "998957790141",
+        "email": "ergashovjafar84@gmail.com",
+        "password": "1234567@",
+        "createdAt": "2025-04-05T12:08:55.907Z"
+    },
+    {
+        "id": 5,
+        "username": "hcgfhcx",
+        "phone": "998957790141",
+        "email": "ergashovjafar4@gmail.com",
+        "password": "1234567@",
+        "createdAt": "2025-04-05T12:12:56.456Z"
+    },
+    {
+        "id": 6,
+        "username": "jfsjrj",
+        "phone": "998957790141",
+        "email": "ergashovjafar9@gmail.com",
+        "password": "12345678@",
+        "createdAt": "2025-04-05T12:38:48.564Z"
+    },
+    {
+        "id": 7,
+        "username": "sahdjghas",
+        "phone": "998915257022",
+        "email": "ergashovjafar49@gmail.com",
+        "password": "1234567@",
+        "createdAt": "2025-04-05T12:40:45.305Z"
+    },
+    {
+        "id": 8,
+        "username": "cjdsagc",
+        "phone": "998998642567",
+        "email": "ergashovjafar40@gmail.com",
+        "password": "12345678@",
+        "createdAt": "2025-04-05T12:41:56.498Z"
+    },
+    {
+        "id": 9,
+        "username": "jdchs",
+        "phone": "998909998789",
+        "email": "ergashovjafar94@gmail.com",
+        "password": "1234567@",
+        "createdAt": "2025-04-05T12:49:44.107Z"
+    },
+    {
+        "id": 10,
+        "username": "csdjhcv",
+        "phone": "998902345678",
+        "email": "ergashovjafar44@gmail.com",
+        "password": "1234678@",
+        "createdAt": "2025-04-05T12:50:54.715Z"
+    },
+    {
+        "id": 11,
+        "username": "fhxgxgjcfx",
+        "phone": "998998099889",
+        "email": "ergashovjafar894@gmail.com",
+        "password": "1245678@",
+        "createdAt": "2025-04-05T12:55:05.693Z"
+    }
+]

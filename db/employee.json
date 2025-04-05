@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "username": "hho",
+        "email": "shoxruxmurodov0099@gmail.com",
+        "password": "shoxrux",
+        "createdAt": "2025-04-02T15:07:04.318Z",
+        "act_count": 3,
+        "updatedAt": "2025-04-05T13:09:48.433Z"
+    },
+    {
+        "id": 3,
+        "username": "Ja'far",
+        "email": "shoxruxmurodov1100@gmail.com",
+        "password": "shoxrux",
+        "createdAt": "2025-04-02T15:36:34.068Z",
+        "act_count": 0,
+        "updatedAt": "2025-04-05T13:43:53.491Z",
+        "phone_num": "998915257022"
+    },
+    {
+        "id": 4,
+        "username": "Ja'far",
+        "email": "shoxruxmurodov111@gmail.com",
+        "password": "shoxrux",
+        "createdAt": "2025-04-05T10:11:08.867Z",
+        "act_count": 0,
+        "phone_num": "998902555655"
+    },
+    {
+        "id": 5,
+        "username": "ergashov_jafar_",
+        "email": "shoxruxmurodov90@gmail.com",
+        "password": "1234567@",
+        "createdAt": "2025-04-05T11:41:31.826Z",
+        "act_count": 0,
+        "phone_num": "998957790141"
+    }
+]
