@@ -55,18 +55,20 @@ async function postClient(data) {
         body: JSON.stringify(data)
     });
     const res = await req.json();
-    console.log(res);
-    if (req.ok) return res;
-    else alert(res.message||"siz kiritish paytida xatoga yo'l qo'ydiz");
+    if (req.ok) return res
+    // else alert(res.message||"siz kiritish paytida xatoga yo'l qo'ydiz");
 }
 
 async function postAct(data) {
-    const req = await fetch('http://localhost:4000/api/act', {
+    const req = await fetch('http://localhost:4000/api/actes', {
         method: "POST",
         headers: { token, "Content-type": "application/json" },
         body: JSON.stringify(data)
     });
     const res = await req.json();
+    if(res.status==201){
+        window.location="/royhat.buyurtmalar.html"
+    }
     
     
 }
@@ -95,9 +97,7 @@ elForm.addEventListener('submit', async (evt) => {
         if (key in formData) obj[key] = formData[key];
         return obj;
     }, {});
-    console.log(clientData);
     
-    console.log(formData);
     
     const actKeys = ["tech_id", "emp_id"];
     const actData = actKeys.reduce((obj, key) => {
@@ -105,12 +105,10 @@ elForm.addEventListener('submit', async (evt) => {
         return obj;
     }, {});
     
-console.log(actData);
 
     const id = await postClient(clientData);
-    console.log(id);
     
-    actData.user_id = id;
+    actData.user_id = id.id;
     postAct(actData);
 });
 

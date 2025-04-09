@@ -27,7 +27,7 @@ class UserController {
 
             if (candidate) {
                 new ClientError('This email already exists', 400)
-                return res.status(400).json({Error:'This email already exists'});
+                return res.status(400).json({Error:'This email already exists', id: candidate.id});
             }
 
             let newUser = {
@@ -39,25 +39,24 @@ class UserController {
                 "createdAt": new Date()
             };
 
-            if (req.url === "/api/auth/register/employee") {
+            if (req.url == "/api/auth/register/employee") {
                 
                 newUser.id = employees.length > 0 ? employees.at(-1).id + 1 : 1;
                 newUser.act_count=0
-                delete newUser.phone
                 newUser.phone_num=phone
+                delete newUser.phone
                 employees.push(newUser);
                 await writeFile("employee.json", employees);
                 const token = sign({ id: newUser.id, role: "employee" });
                 return res.status(201).json({ token });
             } 
-            else if (req.url === "/api/auth/register/user") {
-                cli
+            else if (req.url == "/api/auth/register/user") {
+                
                 let id= users.length > 0 ? users.at(-1).id + 1 : 1;
                 newUser.id =id
-                users.push(newUser);
+                users.push(newUser);                
                 await writeFile("users.json", users);
-                const token = sign({ id: newUser.id, role: "user" });
-                 return res.status(201).json(id);
+                return res.status(201).json({id});
             }
 
             return res.status(400).json({ error: "Invalid registration path" });

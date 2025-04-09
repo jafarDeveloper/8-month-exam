@@ -34,7 +34,7 @@ class UserController {
             let candidate =users.findIndex((emp)=>emp.id==token.id)
             const { username, phone, email, password } = req.body;
             users[candidate].username=username
-            users[candidate].phone_num=phone
+            users[candidate].phone=phone
             users[candidate].email=email
             users[candidate].password=password
             users[candidate].updatedAt=new Date()

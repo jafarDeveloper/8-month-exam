@@ -1,8 +1,9 @@
 [
     {
-        "id":1,
-        "username":"ja'far",
-        "email":"ergashovjafar814@gmail.com",
-        "password":"ja'far"
+        "id": 1,
+        "username": "jafar",
+        "email": "admin@gmail.com",
+        "password": "admin123",
+        "updatedAt": "2025-04-08T07:05:14.909Z"
     }
 ]

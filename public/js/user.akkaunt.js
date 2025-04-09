@@ -10,7 +10,7 @@ const elForm = document.querySelector('.js-form');
 const elBtn = document.querySelector('.js-btn');
 
 async function takingIdEmployee(token) {
-    const req = await fetch('http://localhost:4000/api/admin', { headers: { token } });
+    const req = await fetch('http://localhost:4000/api/users', { headers: { token } });
     const res = await req.json();
     if (req.ok) {
         
@@ -23,7 +23,7 @@ async function takingIdEmployee(token) {
 }
 
 async function update( data) {
-    const req = await fetch(`http://localhost:4000/api/admin`, {
+    const req = await fetch(`http://localhost:4000/api/user`, {
         method: "PUT",
         headers: { token ,"Content-type": "application/json" },
         body: JSON.stringify(data)

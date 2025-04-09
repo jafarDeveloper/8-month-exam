@@ -32,7 +32,7 @@ app.get('/api/admin', adminController.get)
 
 app.get('/api/acts', actController.get)
 app.put('/api/actes/:id', actController.Update)
-app.post('/api/act', actController.create)
+app.post('/api/actes', actController.create)
 
 app.get('/api/prices', priceController.get)
 app.get('/api/prices/:id', priceController.getOnly)
@@ -43,8 +43,7 @@ app.get('/api/users', userController.getOnly)
 
 app.use(express.static("views"));
 app.get("*", (req, res) => {
- 
-    if (!req.url.startsWith("api")) {
+    if (!req.url.startsWith("/api")) {
         if (req.url.startsWith("/js")) {
     
             res.sendFile(join(process.cwd(),"/public", req.url));

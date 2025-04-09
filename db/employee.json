@@ -1,38 +1,37 @@
 [
     {
         "id": 1,
-        "username": "hho",
-        "email": "shoxruxmurodov0099@gmail.com",
-        "password": "shoxrux",
+        "username": "jafar",
+        "email": "ergashovjafar814@gmail.com",
+        "password": "ja'far",
         "createdAt": "2025-04-02T15:07:04.318Z",
         "act_count": 3,
-        "updatedAt": "2025-04-05T13:09:48.433Z"
+        "updatedAt": "2025-04-08T07:02:54.643Z"
+    },
+    {
+        "id": 2,
+        "username": "azizbek",
+        "email": "bopejop738@gmail.com",
+        "password": "12345678@",
+        "createdAt": "2025-04-08T10:24:25.339Z",
+        "act_count": 0,
+        "phone_num": "998953895676"
     },
     {
         "id": 3,
-        "username": "Ja'far",
-        "email": "shoxruxmurodov1100@gmail.com",
-        "password": "shoxrux",
-        "createdAt": "2025-04-02T15:36:34.068Z",
-        "act_count": 0,
-        "updatedAt": "2025-04-05T13:43:53.491Z",
+        "username": "javoxir",
+        "email": "javoxir@gmail.com",
+        "password": "1234567@",
+        "createdAt": "2025-04-08T15:17:52.748Z",
+        "act_count": 1,
         "phone_num": "998915257022"
     },
     {
         "id": 4,
-        "username": "Ja'far",
-        "email": "shoxruxmurodov111@gmail.com",
-        "password": "shoxrux",
-        "createdAt": "2025-04-05T10:11:08.867Z",
-        "act_count": 0,
-        "phone_num": "998902555655"
-    },
-    {
-        "id": 5,
-        "username": "ergashov_jafar_",
-        "email": "shoxruxmurodov90@gmail.com",
-        "password": "1234567@",
-        "createdAt": "2025-04-05T11:41:31.826Z",
+        "username": "Ja'far2004",
+        "email": "shoxruxmurodov1000@gmail.com",
+        "password": "1236345@",
+        "createdAt": "2025-04-09T14:01:10.924Z",
         "act_count": 0,
         "phone_num": "998957790141"
     }

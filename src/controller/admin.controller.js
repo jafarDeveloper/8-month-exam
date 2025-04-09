@@ -20,19 +20,18 @@ class AdminController {
     }
     async Update(req, res) {
         try {
-          let employees= await readFile("employee.json")
+          let admin= await readFile("admin.json")
             let token=req.headers.token;
             token= verify(token)
             if (!token.id||token.role!=="admin") new ClientError("Invalid token", 400)
-            let candidate =employees.findIndex((emp)=>emp.id==token.id)
-            const { username, phone, email, password } = req.body;
-            employees[candidate].username=username
-            employees[candidate].phone_num=phone
-            employees[candidate].email=email
-            employees[candidate].password=password
-            employees[candidate].updatedAt=new Date()
-            await writeFile("employee.json", employees);
-            res.status(200).json(["Employee sucsesfully updated"])
+            let candidate =admin.findIndex((emp)=>emp.id==token.id)
+            const { username, email, password } = req.body;
+            admin[candidate].username=username
+            admin[candidate].email=email
+            admin[candidate].password=password
+            admin[candidate].updatedAt=new Date()
+            await writeFile("admin.json", admin);
+            res.status(200).json(["Admin sucsesfully updated"])
 
         } catch (e) {
             return globalError(res, e);

@@ -9,12 +9,11 @@ async function checkToken(token) {
     });
 
     const res = await req.json();
-    console.log(res);
     
     if(req.ok){
         if(res.role == 'admin') return window.location = 'admin.html';
         else if(res.role == 'employee') return window.location = 'ishchi.html';
-        else if(res.role == 'client') return window.location = 'client.html';
+        else if(res.role == 'user') return window.location = 'client.html';
     }
 }
 

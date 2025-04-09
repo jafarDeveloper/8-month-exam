@@ -7,49 +7,12 @@ const { writeFile } = require("../models/writeFile.js");
 class ActController {
   async create(req, res) {
     try {
-
       const actions = await readFile("actions.json");
       const users = await readFile("users.json");
       const employes = await readFile("employee.json");
       const technologies = await readFile("technologies.json");
       const prices = await readFile("prices.json");
-
-      const { username, phone, email, password, tech_id, emp_id } = req.body;
-
-      let existingClient = users.find(
-        (client) => client.phone === phone && client.email === email
-      );
-
-      let user_id;
-
-      if (!existingClient) {
-        const lastClient = users[users.length - 1];
-        const newuser_id = lastClient ? lastClient.id + 1 : 1;
-
-        const newUser = {
-          id: newuser_id,
-          username,
-          email,
-          password,
-          phone,
-          createdAt: new Date(),
-        };
-
-        users.push(newUser);
-        writeFile("users.json", users);
-        user_id = newuser_id;
-      } else {
-        user_id = existingClient.id;
-      }
-
-      const alreadyActioned = actions.some((action) => action.user_id === user_id);
-      if (alreadyActioned) {
-        return res
-          .status(409)
-          .json({ message: "Client already submitted an action", status: 409 });
-      }
-
-
+      const {user_id, tech_id, emp_id } = req.body;
       const employeIndex = employes.findIndex((emp) => emp.id == emp_id);
       if (employeIndex === -1) {
         return res.status(404).json({ message: "Employe not found", status: 404 });
@@ -92,6 +55,8 @@ class ActController {
 
 
     } catch (e) {
+      console.log(e);
+      
       return globalError(res, e);
     }
   }
@@ -100,7 +65,6 @@ class ActController {
     try {
       let users = await readFile("users.json");
       let techs = await readFile("technologies.json");
-      let employees = await readFile("employee.json");
       let token = req.headers.token;
       token = verify(token)
       if (!token.id) new ClientError("Invalid token", 400)
@@ -130,10 +94,14 @@ class ActController {
       let id = req.params.id
       token = verify(token)
       if (!token.id || token.role !== "employee") new ClientError("Invalid token", 400)
+      let employees = await readFile("employee.json");
+    let can = employees.findIndex((emp)=>emp.id==token.id)
+    employees[can].act_count=employees[can].act_count-1
       let candidate = acts.findIndex((emp) => emp.id == id)
       acts[candidate].status = acts[candidate].status + 1
       acts[candidate].updatedAt = new Date()
       await writeFile("actions.json", acts);
+      await writeFile("employee.json", employees);
       res.status(200).json(["Action sucsesfully updated"])
 
     } catch (e) {

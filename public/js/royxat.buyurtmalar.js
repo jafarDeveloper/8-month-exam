@@ -21,9 +21,11 @@ function renderOrders(arr, node) {
     const fragment = document.createDocumentFragment();
     arr.forEach(async({createdAt, user_id,emp_id,tech_id, status}) => {
         let price =  await fetch(`http://localhost:4000/api/prices/${tech_id}`, {headers:{token}}).then(res => res.json());
+        let techs =  await fetch(`http://localhost:4000/api/techs`, {headers:{token}}).then(res => res.json());
         let name =  await fetch(`http://localhost:4000/api/employee/${emp_id}`, {headers:{token}}).then(res => res.json());
         let username =  await fetch(`http://localhost:4000/api/users/${user_id}`, {headers:{token}}).then(res => res.json());
-        console.log(price, name,username);
+       let tech = techs.filter((tech)=>tech.id==tech_id)
+        
         
         const card = document.createElement('div');
         card.className = 'card me-3';
@@ -33,7 +35,8 @@ function renderOrders(arr, node) {
                 <h5 class="card-title">employee:${name.username}</h5>
                 <h5 class="card-title">user: ${username.username}</h5>
                 <h5 class="card-title">price: ${price.price}</h5>
-                <p class="card-text">${createdAt.split('/')[0]}</p>
+                <h5 class="card-title">Tech: ${tech[0].tech_name}</h5>
+                <p class="card-text">${new Date(createdAt).toLocaleDateString()}</p>
                 <a href="#" class="btn btn-primary disabled">${status === 1 ? 'Tayyor' : 'Tayyorlanmoqda'}</a>
             </div>
         `;
